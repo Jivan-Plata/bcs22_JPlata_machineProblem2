@@ -11,9 +11,10 @@ let chosenNumber = parseInt(getRandom (101));
 alert("Guess the number game! You have 10 tries to guess the number between 1 - 100!")
 
 do{
+
 	triesLeft = triesLeft - 1
 	tries = tries + 1;
-	let userNumber = parseInt(prompt("The number is: " +chosenNumber +"Enter a number between 1 and 100: "));
+	let userNumber = parseInt(prompt("Enter a number between 1 and 100: "));
 
 	if(chosenNumber == userNumber){
 		running = false;
@@ -24,6 +25,12 @@ do{
 	} else if (userNumber < chosenNumber){
 		alert("Too low! Enter a new number. You have " +triesLeft + "tries left.")
 	}
+
+		if (triesLeft == 0){
+		running = false;
+		alert('You have run out of tries. The number was ' +chosenNumber)
+	}
+
 
 } while (running == true);
 
